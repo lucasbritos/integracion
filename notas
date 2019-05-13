@@ -1,0 +1,22 @@
+## GENERACION DE PASSWORDS PARA PROXY
+
+htpasswd -c ./nginx/passwords tiagora
+
+
+## COMANDO DOCKER-COMPOSE
+
+docker-compose up --no-start
+docker-compose start
+
+docker-compose down
+docker-compose down -v (Perdida de persistencia)
+
+
+
+
+    
+docker run -e URL=<user>/<password>@//xxx.yyy.eu-west-1.rds.amazonaws.com:1521/ORCL -ti sflyr/sqlplus
+
+
+
+docker run --rm -e URL=soptiagora/SandJunT1ag@192.168.200.93:1521/orcl -ti sflyr/sqlplus

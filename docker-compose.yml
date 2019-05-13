@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  nifi:
+    container_name: nifi
+    image: "apache/nifi"
+    volumes:
+      - datafiles:/opt/datafiles
+      - scriptfiles:/opt/scriptfiles
+      - certfiles:/opt/certfiles
+      - nifi_data:/opt/nifi/
+      - ${PWD}/nifi/files:/usr/share/files
+
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/passwords:/etc/nginx/passwords:ro
+    restart: always
+
+volumes:
+  datafiles:
+  scriptfiles:
+  certfiles:
+  nifi_data:
