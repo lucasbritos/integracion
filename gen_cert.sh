@@ -14,6 +14,6 @@ openssl req -new -x509 -extensions SAN -nodes -sha1 -days 1001 \
 
 keytool -import -noprompt -storepass $2 -alias $1 -file files/host.crt -keystore files/client.truststore
 
-keytool -list -v -alias 172.16.23.118 -keystore files/client.truststore -storepass $2
+keytool -list -v -alias $1  -keystore files/client.truststore -storepass $2
 
 cp files/client.truststore ../nifi/client.truststore
