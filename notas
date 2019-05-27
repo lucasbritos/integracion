@@ -19,4 +19,3 @@ docker run -e URL=<user>/<password>@//xxx.yyy.eu-west-1.rds.amazonaws.com:1521/O
 
 
 
-docker run --rm -e URL=soptiagora/SandJunT1ag@192.168.200.93:1521/orcl -ti sflyr/sqlplus
