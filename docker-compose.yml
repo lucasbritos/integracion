@@ -2,7 +2,6 @@ version: '3'
 
 services:
   nifi:
-    container_name: nifi
     image: "apache/nifi:1.9.2"
     volumes:
       - nifi_data:/opt/nifi/nifi-current/database_repository
@@ -12,11 +11,10 @@ services:
       - nifi_state:/opt/nifi/nifi-current/state
       - nifi_conf:/opt/nifi/nifi-current/conf
       - ${PWD}/nifi/files:/usr/share/files
-     restart: always
+    restart: always
 
 
   nginx:
-    container_name: nginx
     image: nginx:latest
     ports:
       - 8080:80
